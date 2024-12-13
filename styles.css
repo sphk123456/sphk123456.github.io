@@ -1,0 +1,395 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    padding: 2rem 1rem;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    font-size: 2.2rem;
+    font-weight: 600;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 0;
+    line-height: 1;
+}
+
+.input-section {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 2rem;
+}
+
+#taskInput {
+    flex: 1;
+    padding: 12px 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+#taskInput:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+}
+
+button {
+    padding: 12px 24px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background-color: #45a049;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tabs {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 1.5rem;
+    padding: 4px;
+    background-color: #f5f5f5;
+    border-radius: 12px;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 12px 20px;
+    background-color: transparent;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #666;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: none;
+}
+
+.tab-btn:hover {
+    background-color: rgba(76, 175, 80, 0.1);
+    color: #4CAF50;
+    transform: none;
+    box-shadow: none;
+}
+
+.tab-btn.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 1.5rem;
+    background-color: white;
+    margin-bottom: 0.8rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    border: 1px solid #eee;
+}
+
+li:hover {
+    transform: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-color: #4CAF50;
+}
+
+.task-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 12px;
+    width: 100%;
+}
+
+.task-text {
+    flex: 1;
+    font-size: 1rem;
+    color: #2c3e50;
+}
+
+.task-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.timestamp {
+    font-size: 0.85rem;
+    color: #999;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.task-actions {
+    display: flex;
+    gap: 8px;
+    margin: 0;
+}
+
+.checkbox {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: #4CAF50;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: #999;
+}
+
+.delete-btn {
+    background-color: #ff5252;
+    padding: 8px 16px;
+}
+
+.delete-btn:hover {
+    background-color: #ff1744;
+}
+
+.edit-btn {
+    background-color: #2196F3;
+    padding: 8px 16px;
+}
+
+.edit-btn:hover {
+    background-color: #1976D2;
+}
+
+/* 修改和添加以下响应式样式 */
+@media (max-width: 600px) {
+    body {
+        padding: 1rem 0.5rem;
+    }
+
+    .container {
+        padding: 1rem;
+        border-radius: 12px;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    .input-section {
+        flex-direction: column;
+    }
+
+    #taskInput, button {
+        width: 100%;
+    }
+
+    .tabs {
+        gap: 6px;
+    }
+
+    .tab-btn {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+
+    li {
+        padding: 0.8rem;
+        margin-bottom: 0.6rem;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .task-content {
+        flex-direction: row;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 8px;
+        width: 100%;
+    }
+
+    .checkbox {
+        width: 20px;
+        height: 20px;
+        margin-right: 5px;
+        flex-shrink: 0;
+    }
+
+    .task-text {
+        font-size: 0.95rem;
+        flex: 1;
+        word-break: break-word;
+        line-height: 1.4;
+        margin-bottom: 8px;
+    }
+
+    .task-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .timestamp {
+        font-size: 0.75rem;
+        color: #999;
+        margin: 0;
+        display: flex;
+        align-items: center;
+    }
+
+    .timestamp time {
+        display: none;
+    }
+
+    .task-actions {
+        display: flex;
+        gap: 8px;
+        margin: 0;
+        width: auto;
+    }
+
+    .edit-btn, .delete-btn {
+        padding: 6px 12px;
+        font-size: 0.85rem;
+        width: 60px;
+        min-width: unset;
+        text-align: center;
+    }
+
+    .pin-badge {
+        margin-right: 0;
+    }
+}
+
+/* 添加中等屏幕的适配 */
+@media (max-width: 800px) {
+    .container {
+        max-width: 100%;
+        margin: 1rem;
+    }
+}
+
+/* 添加置顶相关样式 */
+.pin-btn {
+    background-color: #9e9e9e;
+    padding: 8px;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pin-btn:hover {
+    background-color: #757575;
+}
+
+.pin-btn.pinned {
+    background-color: #ffd700;
+}
+
+.pin-btn.pinned:hover {
+    background-color: #ffc400;
+}
+
+.pin-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M16,12V4H17V2H7V4H8V12L6,14V16H11.2V22H12.8V16H18V14L16,12Z'/%3E%3C/svg%3E");
+    background-size: cover;
+}
+
+.pin-badge {
+    background-color: #ffd700;
+    color: #333;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    margin-right: 8px;
+}
+
+li.pinned {
+    border-left: 3px solid #ffd700;
+    background-color: #fffef5;
+}
+li.pinned .task-text {
+    font-weight: bold;
+}
+
+/* 移动端适配 */
+@media (max-width: 600px) {
+    .pin-btn {
+        padding: 6px;
+        width: 32px;
+        height: 32px;
+    }
+
+    .pin-icon {
+        width: 14px;
+        height: 14px;
+    }
+}
+
+/* 修改 header 和 logo 样式 */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 2rem;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    /* vertical-align: middle; */
+    display: block;
+}
+
+/* 在移动端适配中保留 logo 大小调整 */
+@media (max-width: 600px) {
+    .logo {
+        width: 32px;
+        height: 32px;
+    }
+}
+ 

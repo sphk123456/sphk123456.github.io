@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>待办事项清单</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="todo-logo.svg" alt="Todo Logo" class="logo">
+            <h1>待办事项清单</h1>
+        </div>
+        <div class="input-section">
+            <input type="text" id="taskInput" placeholder="请输入新任务...">
+            <button id="addTask">添加</button>
+        </div>
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="all">所有任务</button>
+            <button class="tab-btn" data-tab="active">进行中</button>
+            <button class="tab-btn" data-tab="completed">已完成</button>
+        </div>
+        <ul id="taskList"></ul>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html> 
